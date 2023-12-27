@@ -1,0 +1,50 @@
+{
+    "greetings": {
+        "patterns": [
+            "hi",
+            "hello",
+            "hey"
+        ],
+        "responses": [
+            "Hello!",
+            "Hi there!",
+            "Hey! How can I help you today?"
+        ]
+    },
+    "default": {
+        "patterns": [
+            "how are you",
+            "fine",
+            "good",
+            "super",
+            "who are you",
+            "what are you",
+            "tell me a song",
+            "can you sing a song",
+            "thank you",
+            "i love you",
+            "will you marry me",
+            "i want to marrry you",
+            "you are my heart",
+            "i want to be your husband"
+            
+        ],
+        "responses": [
+            "I am fine How about you?",
+            "I am happy to here that",
+            "I am happy to here that",
+            "I am happy to here that",
+            "I am your Assistant",
+            "I am your Assistant",
+            "Twinkle, twinkle, little star,\nHow I wonder what you are.\nUp above the world so high,\nLike a diamond in the sky.",
+            "Twinkle, twinkle, little star,\nHow I wonder what you are.\nUp above the world so high,\nLike a diamond in the sky.",
+            "You are welcome.",
+            "Thank you, But i am your virtual assistant.I am not meant for that,SORRY!!",
+            "Thank you, But i am your virtual assistant.I am not meant for that,SORRY!!",
+            "Thank you, But i am your virtual assistant.I am not meant for that,SORRY!!",
+            "Thank you, But i am your virtual assistant.I am not meant for that,SORRY!!",
+            "Thank you, But i am your virtual assistant.I am not meant for that,SORRY!!"
+            
+        ]
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <style>
+        .mydiv {
+            margin: 0 auto;
+            border: 3px outset blue;
+            padding: 10px;
+            width: 40%;
+            background-color: white;
+            text-align: left;
+        }
+
+        .user-message {
+            text-align: right;
+            background-color: #007BFF;
+            color: #fff;
+            border: auto outset blue;
+            padding: 10px;
+            margin: 10px auto;
+            width: 40%;
+        }
+
+        .bot-message {
+            text-align: left;
+            background-color: #ccc;
+            border: auto outset blue;
+            padding: 10px;
+            margin: 10px auto;
+            width: 40%;
+        }
+
+        .input-container {
+            
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+             width: 40%;
+        }
+
+        #userInput {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+        }
+
+        #sendMessage {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>  
+<body align="center">
+
+    <h1>C-hatbot</h1>
+    <div class="mydiv" id="chat">
+        <!-- Chat messages will be displayed here -->
+    </div>
+    <div class="input-container">
+        <input type="text" id="userInput" placeholder="You:">
+        <button id="sendMessage">Send</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#sendMessage").click(function() {
+                var user_input = $("#userInput").val();
+                // Append user message with user-message class
+                $("#chat").append("<p class='user-message'>You: " + user_input + "</p");
+
+                $.ajax({
+                    type: "POST",
+                    url: "/get_response",
+                    data: { user_input: user_input },
+                    success: function(response) {
+                        // Append chatbot message with bot-message class
+                        $("#chat").append("<p class='bot-message'>Chatbot: " + response.response + "</p");
+                    }
+                });
+
+                // Clear the user input field
+                $("#userInput").val("");
+            });
+        });
+    </script>
+</body>
+</html>
